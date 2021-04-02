@@ -43,7 +43,6 @@ app.listen(PORT, function() {
   );
 
 
-  // const $ = await cheerio.load('div.item-info > a[attr=href]');
   const itemListing = await page.$$eval("div.item-button-area > button", (a) =>
     a.map(({ innerText }) => innerText)
   );
@@ -65,7 +64,7 @@ app.listen(PORT, function() {
     item: itemName,
     inStock: itemListing[index],
     url: itemAvail[index],
-    price: itemPrice[index]
+    price: itemPrice[index],
     }
   })
   console.log(await listings);
@@ -79,20 +78,3 @@ fs.writeFileSync('./src/components/listings.json', data);
   await readNewegg()
 }
 )() 
-
-
-// (async () => {
-    
-//     const url = 'https://api.bestbuy.com/v1/products((search=rtx&search=30)&categoryPath.id=abcat0507002)?apiKey=mzA3x5mAGRnx6uKtGdsPyEg4&sort=name.asc&show=addToCartUrl,name,url,onlineAvailability&facet=description&pageSize=100&format=json'
-
-// })();
-// const LIST_LINK_SELECTOR = await page.$(".item-cell > div > a");
-// const LIST_STOCK_SELECTOR = await page.$(".item-cell > div > div.item-info > p > i");
-// const LIST_PRICE_SELECTOR = await page.$(".item-cell > div > div.item-action > ul > li.price-current");
-// const itemCell = await page.$('div.page-content > section > div:nth-child(1) > div > div.row-body > div:nth-child(1) > div > div > div.row-body > div > div > div.item-cells-wrap.border-cells.items-grid-view.four-cells.expulsion-one-cell')
-
-// for (let i = 0; i <= listLength; i++) {
-//     const titleArray = await page.evaluate((LIST_TITLE_SELECTOR) => {
-//         return Array.from(document.querySelectorAll(LIST_TITLE_SELECTOR)).alt;
-//     });
-// }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function Feed() {
+function LeftCol() {
     const [data,setData]=useState([]);
     const getData=()=>{
     fetch('listings.json'
@@ -29,12 +29,12 @@ function Feed() {
 
 
     return (
-        <div className="feed">
+        <div className="leftCol">
      {
-       data && data.length>0 && data.map((item)=><p>{item.item}</p>)
+       data && data.length>0 && data.map((listings)=><p>{listings.inStock}</p>)
      }
     </div>
   );
 }
 
-export default Feed;
+export default LeftCol;

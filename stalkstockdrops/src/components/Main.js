@@ -1,4 +1,6 @@
 import React from "react";
+import Feed from "../components/Feed";
+import LeftCol from "../components/LeftCol";
 import "../styles/Main.css"
 
 function Main() {
@@ -57,13 +59,13 @@ function Main() {
       <div className="container main-content">
         <div className="jumbotron row">
           <div className="col-md-2">
-            This is where the left content box will go
+            <LeftCol />
           </div>
           <div className="col-sm-8">
-            live stream of inventory goes here
+            <Feed />
           </div>
           <div className="col-md-2">
-            this is where the right side content goes
+            {/* <RightCol /> */}
           </div>
         </div>
       </div>

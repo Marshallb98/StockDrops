@@ -1,11 +1,9 @@
 import React from "react";
-import Main from "./components/Main/Main";
-import Feed from "./components/Feed"
+import Main from "./components/Main";
 function App() {
   return (
     <div>
       <Main />
-      <Feed/>
     </div>
   )  
 }
