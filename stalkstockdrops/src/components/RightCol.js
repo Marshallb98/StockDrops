@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function LeftCol() {
+function RightCol() {
     const [data,setData]=useState([]);
     const getData=()=>{
     fetch('listings.json'
@@ -29,12 +29,12 @@ function LeftCol() {
 
 
     return (
-        <div className="leftCol">
+        <div className="RightCol">
      {
-       data && data.length>0 && data.map((item)=><p>{item.inStock}</p>)
+       data && data.length>0 && data.map((item)=><p>{item.price}</p>)
      }
     </div>
   );
 }
 
-export default LeftCol;
+export default RightCol;

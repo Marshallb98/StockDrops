@@ -1,6 +1,7 @@
 import React from "react";
 import Feed from "../components/Feed";
 import LeftCol from "../components/LeftCol";
+import RightCol from "../components/RightCol";
 import "../styles/Main.css"
 
 function Main() {
@@ -65,7 +66,7 @@ function Main() {
             <Feed />
           </div>
           <div className="col-md-2">
-            {/* <RightCol /> */}
+            <RightCol />
           </div>
         </div>
       </div>
