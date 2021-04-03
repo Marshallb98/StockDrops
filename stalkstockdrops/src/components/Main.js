@@ -1,4 +1,8 @@
 import React from "react";
+import Feed from "../components/Feed";
+// import LeftCol from "../components/LeftCol";
+// import RightCol from "../components/RightCol";
+import "../styles/Main.css"
 
 function Main() {
   return (
@@ -21,7 +25,7 @@ function Main() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
-              <a className="nav-link" href="#">
+              <a className="nav-link" href="../Main">
                 Home <span className="sr-only">(current)</span>
               </a>
             </li>
@@ -54,16 +58,16 @@ function Main() {
         </div>
       </nav>
       <div className="container main-content">
-        <div className="jumbotron row">
-          <div className="col-md-2">
-            This is where the left content box will go
+        <div className="row">
+          {/* <div className="col-md-2">
+            <LeftCol />
+          </div> */}
+          <div className="col-sm-12">
+            <Feed />
           </div>
-          <div className="col-sm-8">
-            live stream of inventory goes here
-          </div>
-          <div className="col-md-2">
-            this is where the right side content goes
-          </div>
+          {/* <div className="col-md-2">
+            <RightCol />
+          </div> */}
         </div>
       </div>
     </div>

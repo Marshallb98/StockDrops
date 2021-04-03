@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
-// const listings = require('./listings.json')
-// let data = JSON.parse(listings)
-// const listItems = data.map((items) =>
-// <li>{items}</li>
-function Main() {
+import "../styles/Feed.css"
+
+function Feed() {
     const [data,setData]=useState([]);
     const getData=()=>{
     fetch('listings.json'
@@ -32,12 +30,12 @@ function Main() {
 
 
     return (
-        <div className="feed">
+        <div className="Feed">
      {
-       data && data.length>0 && data.map((item)=><p>{item.item}</p>)
-     }
+       data && data.length>0 && data.map((item)=><ul id="listItems">{item.item} PRICE-{item.price} VIEW STOCKS - <a href="https://www.newegg.com/">{item.inStock}</a></ul>)
+      }
     </div>
   );
 }
 
-export default Main;
+export default Feed;
