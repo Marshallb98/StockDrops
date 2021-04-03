@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "../styles/Feed.css"
 
 function Feed() {
     const [data,setData]=useState([]);
@@ -29,10 +30,10 @@ function Feed() {
 
 
     return (
-        <div className="feed">
+        <div className="Feed">
      {
-       data && data.length>0 && data.map((item)=><p>{item.item}</p>)
-     }
+       data && data.length>0 && data.map((item)=><ul id="listItems">{item.item} PRICE-{item.price} VIEW STOCKS - <a href="https://www.newegg.com/">{item.inStock}</a></ul>)
+      }
     </div>
   );
 }
