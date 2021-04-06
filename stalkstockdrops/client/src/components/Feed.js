@@ -1,4 +1,3 @@
-import { MongooseDocument } from "mongoose";
 import React, { useState, useEffect } from "react";
 import API from "../utils/API"
 function Feed() {
@@ -32,9 +31,9 @@ function Feed() {
       }
 
     return (
-        <div className="Feed">
+        <div>
      {
-       data && data.length>0 && data.map((item)=><ul id="listItems">Updated at UTC(0) - {item.updatedAt.slice(11,  19)}  {item.name} PRICE-{item.price}  AVAILABILITY <a href={item.url}>{checkStock(item.availability)}</a></ul>)
+       data && data.length>0 && data.map((item)=><ul id="listItems"> {item.retailer} UTC(0) - {item.updatedAt.slice(11,  19)}  {item.name.slice(0,  45)} PRICE-{item.price}  AVAILABILITY <a href={item.url}>{checkStock(item.availability)}</a></ul>)
       }
     </div>
   );
