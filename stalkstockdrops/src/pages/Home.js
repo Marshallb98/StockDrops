@@ -2,7 +2,7 @@ import React from "react";
 import Feed from "../components/Feed";
 // import LeftCol from "../components/LeftCol";
 // import RightCol from "../components/RightCol";
-import "../styles/Main.css"
+import "../styles/Home.css"
 
 function Main() {
   return (
