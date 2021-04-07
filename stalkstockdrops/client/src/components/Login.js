@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { Form, Button } from "react-bootstrap"
 import API from "../utils/API";
 // import { Link } from "react-router-dom";
@@ -13,6 +13,7 @@ function Login() {
         password: loginPassword
       }).then((res) => console.log(res))
   }
+  
   return (
     <div className="Login">
       <Form >
@@ -21,7 +22,6 @@ function Login() {
           <Form.Control
             autoFocus
             type="email"
-            value={email}
             onChange={(e) => setLoginEmail(e.target.value)}
           />
         </Form.Group>
@@ -29,7 +29,6 @@ function Login() {
           <Form.Label>Password</Form.Label>
           <Form.Control
             type="password"
-            value={password}
             onChange={(e) => setLoginPassword(e.target.value)}
           />
         </Form.Group>

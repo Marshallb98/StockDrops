@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { Form, Button } from "react-bootstrap"
 import API from "../utils/API";
 // import { Link } from "react-router-dom";
@@ -9,10 +9,12 @@ function Signup() {
   const [registerPassword, setRegisterPassword] = useState()
   const register = () => {
     API.regUser({
-        email: registerEmail,
+      email: registerEmail,
         password: registerPassword
+    
       }).then((res) => console.log(res))
   }
+
   return (
     <div className="Login">
       <Form >
@@ -21,7 +23,6 @@ function Signup() {
           <Form.Control
             autoFocus
             type="email"
-            value={email}
             onChange={(e) => setRegisterEmail(e.target.value)}
           />
         </Form.Group>
@@ -29,7 +30,6 @@ function Signup() {
           <Form.Label>Password</Form.Label>
           <Form.Control
             type="password"
-            value={password}
             onChange={(e) => setRegisterPassword(e.target.value)}
           />
         </Form.Group>
