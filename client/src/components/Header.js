@@ -9,8 +9,9 @@ function Header() {
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="mr-auto">
-      <Nav.Link >Home</Nav.Link>
-      <Nav.Link >Link</Nav.Link>
+      <Nav.Link href="/">Home</Nav.Link>
+      <Nav.Link href="/login" >Login</Nav.Link>
+      <Nav.Link href="/signup" >Sign Up</Nav.Link>
       <NavDropdown title="Dropdown" id="basic-nav-dropdown">
         <NavDropdown.Item>Action</NavDropdown.Item>
         <NavDropdown.Item>Another action</NavDropdown.Item>
