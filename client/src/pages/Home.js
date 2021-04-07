@@ -1,14 +1,12 @@
 import React from "react";
 import Feed from "../components/Feed";
-// import LeftCol from "../components/LeftCol";
-// import RightCol from "../components/RightCol";
 import "../styles/Home.css"
 
 function Main() {
   return (
     <div className="container">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand" href="#">
+        <a className="navbar-brand" id="Title" href="#">
           Stock Drops and Inventories
         </a>
         <button
