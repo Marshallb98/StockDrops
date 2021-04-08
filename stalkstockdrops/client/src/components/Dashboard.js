@@ -11,13 +11,9 @@ const Dashboard = ({history}) => {
 
     return (
         <Container fluid>
-        <Row>
-        <Col></Col>
-          <Col>
+    
             <Feed />
-          </Col>
-          <Col></Col>
-        </Row>
+        
       </Container>
     )
        
