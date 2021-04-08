@@ -1,18 +1,21 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap"
 import API from "../utils/API";
-// import { Link } from "react-router-dom";
-// import axios from "axios";
 
-function Signup() {
+function Signup({history}) {
   const [registerEmail, setRegisterEmail] = useState()
   const [registerPassword, setRegisterPassword] = useState()
-  const register = () => {
-    API.regUser({
-      email: registerEmail,
-        password: registerPassword
-    
-      }).then((res) => console.log(res))
+  const register = async () => {
+    try {
+      const { data } = await API.regUser({
+        email: registerEmail,
+        password: registerPassword,
+      });
+      sessionStorage.setItem("token", data.token);
+      history.push('/sample');
+    } catch(err) {
+      console.log('err signing up ', err);
+    }
   }
 
   return (
@@ -35,7 +38,6 @@ function Signup() {
         </Form.Group>
         <Button 
         block size="lg"
-         type="submit"
          onClick={register}
         >
           Sign Up

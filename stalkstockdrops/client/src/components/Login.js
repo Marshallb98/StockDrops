@@ -1,22 +1,27 @@
-import React, { Component, useState } from "react";
-import { Form, Button } from "react-bootstrap"
+import React, { useState } from "react";
+import { Form, Button } from "react-bootstrap";
 import API from "../utils/API";
-// import { Link } from "react-router-dom";
 
+function Login({ history }) {
+  const [loginEmail, setLoginEmail] = useState();
+  const [loginPassword, setLoginPassword] = useState();
 
-function Login() {
-  const [loginEmail, setLoginEmail] = useState()
-  const [loginPassword, setLoginPassword] = useState()
-  const login = () => {
-    API.loginUser({
+  const login = async () => {
+    try {
+      const { data } = await API.loginUser({
         email: loginEmail,
-        password: loginPassword
-      }).then((res) => console.log(res))
-  }
-  
+        password: loginPassword,
+      });
+      sessionStorage.setItem("token", data.token);
+      history.push("/dashboard");
+    } catch (err) {
+      console.log("err loggin in ", err);
+    }
+  };
+
   return (
     <div className="Login">
-      <Form >
+      <Form>
         <Form.Group size="lg" controlId="email">
           <Form.Label>Email</Form.Label>
           <Form.Control
@@ -32,17 +37,12 @@ function Login() {
             onChange={(e) => setLoginPassword(e.target.value)}
           />
         </Form.Group>
-        <Button 
-        block size="lg"
-         type="submit"
-         onClick={login}
-        >
-          Sign Up
+        <Button block size="lg" onClick={login}>
+          Login
         </Button>
       </Form>
     </div>
   );
 }
-
 
 export default Login;

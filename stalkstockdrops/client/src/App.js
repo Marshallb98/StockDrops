@@ -1,9 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Main from "./components/Main"
+import LandingPage from "./components/LandingPage"
 import Login from "./components/Login"
 import Header from "./components/Header"
 import Signup from "./components/Signup"
+import Dashboard from "./components/Dashboard"
+
 function App() {
   return (
     <div>
@@ -12,15 +14,10 @@ function App() {
           <Header />
         </div>
         <Switch>
-          <Route exact path="/">
-            <Main />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/signup">
-              <Signup />
-            </Route>
+          <Route exact path="/" component={LandingPage} />
+          <Route path="/login" component={Login} />
+          <Route path="/signup" component={Signup} />
+          <Route path="/dashboard" component={Dashboard} />
             {/* <Route path="*">
               <NoMatch />
             </Route> */}
