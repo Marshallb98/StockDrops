@@ -7,10 +7,10 @@ export default {
   },
 
   regUser: function(regUserData) {
-    return axios.post("/api/user/register", regUserData, { withCredentials: false })
+    return axios.post("/api/users/register", regUserData, { withCredentials: true })
   },
   
   loginUser: function(loginUserData) {
-    return axios.post("/api/user/login", loginUserData, { withCredentials: true })
-  }
-};
+    return axios.post("/api/users/login", loginUserData)
+  },
+}

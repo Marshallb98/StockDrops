@@ -1,40 +1,57 @@
 const router = require("express").Router();
-const passport = require("passport");
-const db = require("../../models/");
 const bcrypt = require("bcryptjs");
-require("../../config/passport")(passport);
-router.post("/login", (req, res, next) => {
-  passport.authenticate("local", (err, user, info) => {
-    if (err) 
-        throw err;
-    if (!user)console.log(" error "), res.send("No User Exists");
-    else {
-      req.logIn(user, (err) => {
-        if (err) throw err;
-        res.send("Successfully Authenticated");
-        console.log(req.user);
-      });
-    }
-  })(req, res, next);
+const jwt = require("jsonwebtoken");
+const db = require("../../models/");
+const { authenticateUser } = require("../../middlewares");
+// 
+router.get("/dashboard", authenticateUser, (req, res) => {
+  res.send({ protected: "yoooooo" });
 });
 
-router.post("/register", (req, res) => {
-  db.User.findOne({ email: req.body.email }, async (err, doc) => {
-    if (err) throw err;
-
-    if (doc) res.send("User Already Exists");
-
-    if (!doc) {
-      console.log("password " + req.body.password);
-      const hashedPassword = await bcrypt.hash(req.body.password, 6);
-
-      const newUser = new db.User({
-        email: req.body.email,
-        password: hashedPassword,
-      });
-      await newUser.save();
-      res.send("User Created");
+router.post("/login", async (req, res, next) => {
+  try {
+    const { email, password } = req.body;
+    //Finds looks to see if there is a user with this email then if true it compares the passwords to see if they match
+    const user = await db.User.findOne({ email });
+    if (user) {
+      const isPassword = await bcrypt.compare(password, user.password);
+      if (isPassword) {
+        //If user is authenticated then it is signed with a token
+        const token = await jwt.sign(
+          { email: user.email },
+          process.env.JWT_SECRET_KEY
+        );
+        //Sends token session storage 
+        res.send({ token });
+      } else {
+        res.status(400).send({ error: "Invalid Username/Password" });
+      }
+    } else {
+      res.status(400).send({ error: "Invalid Username/Password" });
     }
-  });
+  } catch (err) {
+    res.status(400).send(err);
+  }
+
+});
+
+router.post("/register", async (req, res) => {
+  try {
+    const saltFactor = 10;
+    req.body.password = await bcrypt.hash(req.body.password, saltFactor);
+    const user = await db.User.create(req.body);
+    if (user) {
+      console.log("JWT_SECRET_KEY==>>", process.env.JWT_SECRET_KEY);
+      const token = await jwt.sign(
+        { email: user.email },
+        process.env.JWT_SECRET_KEY
+      );
+      res.send({ token });
+    } else {
+      res.status(400).send({ error: "Unable to create user" });
+    }
+  } catch (err) {
+    res.status(400).send(err);
+  }
 });
 module.exports = router;

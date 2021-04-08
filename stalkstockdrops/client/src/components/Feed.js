@@ -16,7 +16,7 @@ function Feed() {
       },[])
 
 
-      setInterval(getData, 5000);
+      setInterval(getData, 10000);
 
     function  checkStock(thisItem){
         if (thisItem === "ADD TO CART" ){
@@ -33,7 +33,7 @@ function Feed() {
     return (
         <div>
      {
-       data && data.length>0 && data.map((item)=><ul id="listItems"> {item.retailer} UTC(0) - {item.updatedAt.slice(11,  19)}  {item.name.slice(0,  45)} PRICE-{item.price}  AVAILABILITY <a href={item.url}>{checkStock(item.availability)}</a></ul>)
+       data.map((item, i)=><ul key={i} id="listItems"> {item.retailer} UTC(0) - {item.updatedAt.slice(11,  19)}  {item.name.slice(0,  45)} PRICE-{item.price}  AVAILABILITY <a href={item.url}>{checkStock(item.availability)}</a></ul>)
       }
     </div>
   );
