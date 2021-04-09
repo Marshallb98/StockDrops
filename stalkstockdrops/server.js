@@ -7,7 +7,6 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const DB = require("./models");
 const cors = require("cors");
-
 (async () => {
   try {
     // Connect to the Mongo DB
@@ -15,7 +14,6 @@ const cors = require("cors");
       process.env.MONGODB_URI || "mongodb://localhost/react",
       { useNewUrlParser: true, useUnifiedTopology: true }
     );
-
     // Define middleware here
     app.use(express.urlencoded({ extended: true }));
     app.use(express.json());
@@ -44,6 +42,7 @@ const cors = require("cors");
     });
     // Start Newegg Webscraping Function and sends update to Items collection, and then restarts
     (async () => {
+
       const readNewegg = async () => {
         const browser = await puppeteer.launch({});
         const page = await browser.newPage();
