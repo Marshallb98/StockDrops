@@ -12,7 +12,7 @@ function Signup({history}) {
         password: registerPassword,
       });
       sessionStorage.setItem("token", data.token);
-      history.push('/sample');
+      history.push('/dashboard');
     } catch(err) {
       console.log('err signing up ', err);
     }
