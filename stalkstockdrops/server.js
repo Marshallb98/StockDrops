@@ -7,6 +7,9 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const DB = require("./models");
 const cors = require("cors");
+const readBestBuy = require("./api/bestbuy")
+setTimeout(readBestBuy, 10000);
+
 (async () => {
   try {
     // Connect to the Mongo DB
@@ -41,8 +44,9 @@ const cors = require("cors");
       console.log(`API Server now listening on PORT ${PORT}!`);
     });
     // Start Newegg Webscraping Function and sends update to Items collection, and then restarts
+    
     (async () => {
-
+      
       const readNewegg = async () => {
         const browser = await puppeteer.launch({});
         const page = await browser.newPage();
@@ -96,7 +100,8 @@ const cors = require("cors");
               price: itemDetails.price,
               modelNumber: itemDetails.modelNumber,
               thumbnail: itemDetails.thumbnail,
-            }
+            },
+            {upsert: true}
           ).catch((err) => {
             console.log(err);
           });
