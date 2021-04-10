@@ -22,13 +22,21 @@ function Feed() {
   }, []);
 
   const bottomRef = useRef();
-
+  const topRef = useRef();
   const scrollToBottom = () => {
     bottomRef.current.scrollIntoView({
       behavior: "smooth",
       block: "start",
-    });
+    })
+    // scrollToTop() 
   };
+  // const scrollToTop = () => {
+  //   topRef.current.scrollIntoView({
+  //     behavior: "smooth",
+  //     block: "start",
+  //   });
+  // };
+
 
   function alertInStock(alertItem) {
     const alertFormat = (
@@ -54,11 +62,12 @@ function Feed() {
 
   function checkStock(thisItem) {
     if (thisItem.availability === "ADD TO CART") {
+      let time = thisItem.splice(11,)
       let stock = (
         <>
           <div>
             <span className={thisItem.retailer}>{thisItem.retailer}</span> - Updated at
-            UTC(0) - {thisItem.updatedAt}
+            UTC(0) - <span className="updateSpan">{thisItem.updatedAt}</span>
             {" "}
             {thisItem.price}{" "}
           <a id="btnColor" className="btn btn-success" href={thisItem.url}>
@@ -79,7 +88,7 @@ function Feed() {
         <>
           <div>
             <span className={thisItem.retailer}>{thisItem.retailer}</span> - Updated at
-            UTC(0) - {thisItem.updatedAt}
+            UTC(0) - <span className="updateSpan">{thisItem.updatedAt}</span>
             {" "}
             ${thisItem.price}{" "}
           <a id="btnColor" className="btn btn-success" href={thisItem.url}>
@@ -101,7 +110,7 @@ function Feed() {
         <>
           <div>
             <span className={thisItem.retailer}>{thisItem.retailer}</span> - Updated at
-            UTC(0) - {thisItem.updatedAt}
+            UTC(0) - <span className="updateSpan">{thisItem.updatedAt}</span>
             {" "}
             ${thisItem.price}{" "}
           <a id="btnColor" className="btn btn-danger" href={thisItem.url}>
@@ -122,7 +131,7 @@ function Feed() {
         <>
         <div>
           <span className={thisItem.retailer}>{thisItem.retailer}</span> - Updated at
-          UTC(0) - {thisItem.updatedAt}
+          UTC(0) - <span className="updateSpan">{thisItem.updatedAt}</span>
           {" "}
           {thisItem.price}{" "}
         <a id="btnColor" className="btn btn-danger" href={thisItem.url}>
@@ -189,7 +198,7 @@ function Feed() {
           </Accordion>
         </Col> */}
         <Col>
-          <div className="tab-content item-name-parent autoscroll-container">
+          <div className="tab-content item-name-parent autoscroll-container" ref={topRef}>
             <ListGroup className="scroll-list">
               {data.map((item, index) => (
                 <ListGroup.Item className="list-group-name" key={index}>
