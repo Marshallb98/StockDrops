@@ -55,7 +55,7 @@ function Feed() {
             <span className="priceDiv"> {thisItem.price}</span>{" "}
             <a
               id="btnColor"
-              className="btn btn-success items-button"
+              className="inStockBtn btn btn-success items-button"
               href={thisItem.url}
             >
               {" "}
@@ -75,10 +75,10 @@ function Feed() {
           <div className="first-Line">
             <span className={thisItem.retailer}>{thisItem.retailer}</span>{" "}
             <span className="updateSpan">{dayjs().format("hh:mm:ss")}</span>{" "} $
-            <span className="priceDiv"> {thisItem.price}</span>{" "}
+            <span className="priceDiv"> ${thisItem.price}</span>{" "}
             <a
               id="btnColor"
-              className="btn btn-success items-button"
+              className="inStockBtn btn btn-success items-button"
               href={thisItem.url}
             >
               {" "}
@@ -98,10 +98,10 @@ function Feed() {
           <div className="first-Line">
             <span className={thisItem.retailer}>{thisItem.retailer}</span>{" "}
             <span className="updateSpan">{dayjs().format("hh:mm:ss")}</span> $
-            <span className="priceDiv"> {thisItem.price}</span>{" "}
+            <span className="priceDiv"> ${thisItem.price}</span>{" "}
             <a
               id="btnColor"
-              className="btn btn-danger items-button"
+              className="oosBtn btn btn-danger items-button"
               href={thisItem.url}
             >
               {" "}
@@ -124,7 +124,7 @@ function Feed() {
             <span className="priceDiv"> {thisItem.price}</span>
             <a
               id="btnColor"
-              className="btn btn-danger items-button"
+              className="oosBtn btn btn-danger items-button"
               href={thisItem.url}
             >
               {" "}
@@ -172,7 +172,7 @@ function Feed() {
             </div>
         </Container>
         <Container fluid className="right-container">
-            <Accordion defaultActiveKey="0">
+            <Accordion id="hondaAccord" defaultActiveKey="0">
               {" "}
               <Card>
                 <Accordion.Toggle

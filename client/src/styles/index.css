@@ -1,7 +1,9 @@
 body {
+    color: #FFFF;
     margin: 0;
-    background: linear-gradient(280deg, rgba(187,187,187,0.896796218487395) 10%, rgba(191,191,191,0.8995973389355743) 20%, rgba(151,151,151,0.9023984593837535) 30%, rgba(146,146,146,0.896796218487395) 40%, rgba(144,144,144,0.9023984593837535) 50%, rgba(137,137,137,0.896796218487395) 60%, rgba(133,133,133,0.9) 70%, rgba(107,107,107,0.9023984593837535) 80%, rgba(107,107,107,0.9023984593837535) 90%, rgba(107,107,107,0.9023984593837535) 100%);
-    background-size: 800% 800%;
+    background: rgb(36,59,85);
+background: linear-gradient(330deg, rgba(36,59,85,1) 0%, rgba(20,30,48,1) 25%, rgba(36,59,85,1) 50%, rgba(20,30,48,1) 75%, rgba(36,59,85,1) 100%);
+    background-size: 600% 600%;
     -webkit-animation: AnimationName 27s ease infinite;
     -moz-animation: AnimationName 27s ease infinite;
     -o-animation: AnimationName 27s ease infinite;
