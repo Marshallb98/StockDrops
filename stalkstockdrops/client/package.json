@@ -4,12 +4,14 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
+    "dayjs": "^1.10.4",
     "passport": "^0.4.1",
     "react": "^16.13.1",
     "react-bootstrap": "^1.5.2",
     "react-dom": "^16.13.1",
+    "react-marquee-master": "^1.4.5",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.3"
   },
