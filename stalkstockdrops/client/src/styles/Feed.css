@@ -1,35 +1,77 @@
-/* .feed {
-   column-count: 3;
-   grid-template-rows: 90;
-   column-gap: 1px;
-   column-rule-style: solid;
+.list-group-name:nth-child(even) {
+    background: #bfbfbf;
+  }
+  .list-group-name:nth-child(odd) {
+    background: #909090;
+  }
+.item-name-parent {
+height: 90vh;
+overflow-y: scroll ;
+}
+.list-group-name{
 
+}
+.item-name { 
+    width: 90%;
+  white-space: pre;
+  overflow: hidden;
+  text-overflow: unset;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+.Newegg{
+    color:#000000;
+    font-weight: bold;
+}
+.BestBuy{
+  color:#000000;
+    font-weight: bold;
+}
+.updateSpan{
+    font-weight: bold; 
+    padding-left: 10%;
+}
+.items-button{
+  float: right;
+}
+/* #alertAppend{
 } */
-
-ul#listItems {
-    text-align: center;
-    color: rgb(226, 226, 226);
-    padding: 3px;
-    padding-bottom: 5px;
-    
-};
-
-/* unvisited link */
-a:link {
-    color: rgb(53, 53, 255);
+.main-container{
+  display: flex;
+  width: 50%;
 }
-
-/* visited link */
-a:visited {
-    color: rgb(161, 4, 161);
+.left-container{
+  flex: 0 1 50%;
+  min-height: 100%;
+  max-width: 50%;
 }
-
-  /* mouse over link */
-a:hover {
-    color: hotpink;
+.right-container{
+  margin: auto;
+  flex: 0 1 50%;
+  display: flex;
+  height: 100%;
+  max-width: 50%;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  text-align: center;
 }
-
-  /* selected link */
-a:active {
-    color: green;
+.first-Line{
+  display: flex;
+  justify-content: space-between
+}
+.priceDiv{
+  font-weight: bold;
+}
+.cardHead{
+  background: #909090 !important;
+  font-weight: bold;
+}
+.scrollBtns{
+  font-weight: bold;
+  background: #6b6b6b;
+  border-style: dotted;
+}
+.cardBody{
+  background: #bfbfbf;
 }
