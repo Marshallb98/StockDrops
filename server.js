@@ -52,9 +52,7 @@ const path = require('path');
         const page = await browser.newPage();
         await page.goto(
           "https://www.newegg.com/p/pl?N=100007709%20601357282%208000&PageSize=96",
-          {
-            waitUntil: "networkidle2",
-          }
+          { waitUntil: 'load', timeout: 0 }
         );
 
         const itemListing = await page.$$eval(
