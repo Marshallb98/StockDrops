@@ -15,9 +15,9 @@ function App() {
         </div>
         <Switch>
           <Route exact path="/" component={LandingPage} />
-          <Route path="/login" component={Login} />
-          <Route path="/signup" component={Signup} />
-          <Route path="/dashboard" component={Dashboard} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/signup" component={Signup} />
+          <Route exact path="/dashboard" component={Dashboard} />
             {/* <Route path="*">
               <NoMatch />
             </Route> */}
