@@ -18,7 +18,7 @@ function Feed() {
       // readBestBuy()
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
-    setTimeout(getData, 10000);
+    setTimeout(getData, 2500);
   };
 
   useEffect(() => {
