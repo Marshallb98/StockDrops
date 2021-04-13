@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap"
 import API from "../utils/API";
-
+import "../styles/form.css";
 function Signup({history}) {
   const [registerEmail, setRegisterEmail] = useState()
   const [registerPassword, setRegisterPassword] = useState()
@@ -20,6 +20,7 @@ function Signup({history}) {
 
   return (
     <div className="Login">
+       <div className="formContainer">
       <Form >
         <Form.Group size="lg" controlId="email">
           <Form.Label>Email</Form.Label>
@@ -43,6 +44,7 @@ function Signup({history}) {
           Sign Up
         </Button>
       </Form>
+      </div>
     </div>
   );
 }

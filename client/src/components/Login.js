@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import API from "../utils/API";
-
+import "../styles/form.css";
 function Login({ history }) {
   const [loginEmail, setLoginEmail] = useState();
   const [loginPassword, setLoginPassword] = useState();
@@ -21,11 +21,13 @@ function Login({ history }) {
 
   return (
     <div className="Login">
+      <div className="formContainer">
       <Form>
         <Form.Group size="lg" controlId="email">
           <Form.Label>Email</Form.Label>
           <Form.Control
             autoFocus
+            placeholder="Enter Email Here"
             type="email"
             onChange={(e) => setLoginEmail(e.target.value)}
           />
@@ -34,6 +36,7 @@ function Login({ history }) {
           <Form.Label>Password</Form.Label>
           <Form.Control
             type="password"
+            placeholder="Enter Password Here"
             onChange={(e) => setLoginPassword(e.target.value)}
           />
         </Form.Group>
@@ -41,6 +44,7 @@ function Login({ history }) {
           Login
         </Button>
       </Form>
+      </div>
     </div>
   );
 }

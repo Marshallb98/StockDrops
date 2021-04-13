@@ -1,4 +1,65 @@
-body{
-background-color:  #bfbfbf;
-margin: 0;
+body {
+    margin: 0;
+    background: linear-gradient(280deg, rgba(187,187,187,0.896796218487395) 10%, rgba(191,191,191,0.8995973389355743) 20%, rgba(151,151,151,0.9023984593837535) 30%, rgba(146,146,146,0.896796218487395) 40%, rgba(144,144,144,0.9023984593837535) 50%, rgba(137,137,137,0.896796218487395) 60%, rgba(133,133,133,0.9) 70%, rgba(107,107,107,0.9023984593837535) 80%, rgba(107,107,107,0.9023984593837535) 90%, rgba(107,107,107,0.9023984593837535) 100%);
+    background-size: 800% 800%;
+    -webkit-animation: AnimationName 27s ease infinite;
+    -moz-animation: AnimationName 27s ease infinite;
+    -o-animation: AnimationName 27s ease infinite;
+    animation: AnimationName 27s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0% {
+        background-position: 0% 52%
+    }
+
+    50% {
+        background-position: 100% 49%
+    }
+
+    100% {
+        background-position: 0% 52%
+    }
+}
+
+@-moz-keyframes AnimationName {
+    0% {
+        background-position: 0% 52%
+    }
+
+    50% {
+        background-position: 100% 49%
+    }
+
+    100% {
+        background-position: 0% 52%
+    }
+}
+
+@-o-keyframes AnimationName {
+    0% {
+        background-position: 0% 52%
+    }
+
+    50% {
+        background-position: 100% 49%
+    }
+
+    100% {
+        background-position: 0% 52%
+    }
+}
+
+@keyframes AnimationName {
+    0% {
+        background-position: 0% 52%
+    }
+
+    50% {
+        background-position: 100% 49%
+    }
+
+    100% {
+        background-position: 0% 52%
+    }
 }
