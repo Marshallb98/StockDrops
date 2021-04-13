@@ -48,7 +48,7 @@ setTimeout(readBestBuy, 10000);
     (async () => {
       
       const readNewegg = async () => {
-        const browser = await puppeteer.launch({});
+        const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
         const page = await browser.newPage();
         await page.goto(
           "https://www.newegg.com/p/pl?N=100007709%20601357282%208000&PageSize=96",
