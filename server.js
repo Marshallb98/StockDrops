@@ -9,7 +9,7 @@ const DB = require("./models");
 const cors = require("cors");
 const readBestBuy = require("./api/bestbuy")
 setTimeout(readBestBuy, 10000);
-
+const path = require('path');
 (async () => {
   try {
     // Connect to the Mongo DB
