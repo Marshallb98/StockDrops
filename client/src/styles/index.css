@@ -1,4 +1,67 @@
-body{
-background-color:  #bfbfbf;
-margin: 0;
+body {
+    color: #FFFF;
+    margin: 0;
+    background: rgb(36,59,85);
+background: linear-gradient(330deg, rgba(36,59,85,1) 0%, rgba(20,30,48,1) 25%, rgba(36,59,85,1) 50%, rgba(20,30,48,1) 75%, rgba(36,59,85,1) 100%);
+    background-size: 600% 600%;
+    -webkit-animation: AnimationName 27s ease infinite;
+    -moz-animation: AnimationName 27s ease infinite;
+    -o-animation: AnimationName 27s ease infinite;
+    animation: AnimationName 27s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0% {
+        background-position: 0% 52%
+    }
+
+    50% {
+        background-position: 100% 49%
+    }
+
+    100% {
+        background-position: 0% 52%
+    }
+}
+
+@-moz-keyframes AnimationName {
+    0% {
+        background-position: 0% 52%
+    }
+
+    50% {
+        background-position: 100% 49%
+    }
+
+    100% {
+        background-position: 0% 52%
+    }
+}
+
+@-o-keyframes AnimationName {
+    0% {
+        background-position: 0% 52%
+    }
+
+    50% {
+        background-position: 100% 49%
+    }
+
+    100% {
+        background-position: 0% 52%
+    }
+}
+
+@keyframes AnimationName {
+    0% {
+        background-position: 0% 52%
+    }
+
+    50% {
+        background-position: 100% 49%
+    }
+
+    100% {
+        background-position: 0% 52%
+    }
 }

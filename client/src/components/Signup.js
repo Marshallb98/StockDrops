@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap"
 import API from "../utils/API";
-
+import "../styles/form.css";
 function Signup({history}) {
   const [registerEmail, setRegisterEmail] = useState()
   const [registerPassword, setRegisterPassword] = useState()
@@ -11,6 +11,7 @@ function Signup({history}) {
         email: registerEmail,
         password: registerPassword,
       });
+      alert("User Created!");
       sessionStorage.setItem("token", data.token);
       history.push('/dashboard');
     } catch(err) {
@@ -20,10 +21,13 @@ function Signup({history}) {
 
   return (
     <div className="Login">
+       <div className="formContainer">
       <Form >
+        <h2 style={{marginBottom: "30px"}}>Sign Up!</h2>
         <Form.Group size="lg" controlId="email">
           <Form.Label>Email</Form.Label>
           <Form.Control
+          placeholder="Enter Email Here"
             autoFocus
             type="email"
             onChange={(e) => setRegisterEmail(e.target.value)}
@@ -32,6 +36,7 @@ function Signup({history}) {
         <Form.Group size="lg" controlId="password">
           <Form.Label>Password</Form.Label>
           <Form.Control
+           placeholder="Enter Password Here"
             type="password"
             onChange={(e) => setRegisterPassword(e.target.value)}
           />
@@ -43,6 +48,7 @@ function Signup({history}) {
           Sign Up
         </Button>
       </Form>
+      </div>
     </div>
   );
 }

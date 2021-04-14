@@ -41,13 +41,13 @@ const axios = require("axios")
               thumbnail: itemDetails.thumbnail,
             },
             {upsert: true}
-            ).catch((err) => {
-              console.log(err)
-            })
+            )
           }
           )}catch(err){
             console.log(err)
           }
+    }).catch((err) => {
+      console.log(err)
     })
     setTimeout(readBestBuy, 10000);      
       }

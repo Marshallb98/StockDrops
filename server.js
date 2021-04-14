@@ -9,7 +9,7 @@ const DB = require("./models");
 const cors = require("cors");
 const readBestBuy = require("./api/bestbuy")
 setTimeout(readBestBuy, 10000);
-
+const path = require('path');
 (async () => {
   try {
     // Connect to the Mongo DB
@@ -35,7 +35,7 @@ setTimeout(readBestBuy, 10000);
       app.use(express.static("client/build"));
       // If no API routes are hit, send the React app
       app.get("*", (req, res) => {
-        res.sendFile(path.join(__dirname, "../client/build/index.html"));
+        res.sendFile(path.join(__dirname, "./client/build/index.html"));
       });
     }
 
@@ -48,13 +48,11 @@ setTimeout(readBestBuy, 10000);
     (async () => {
       
       const readNewegg = async () => {
-        const browser = await puppeteer.launch({});
+        const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
         const page = await browser.newPage();
         await page.goto(
           "https://www.newegg.com/p/pl?N=100007709%20601357282%208000&PageSize=96",
-          {
-            waitUntil: "networkidle2",
-          }
+          { waitUntil: 'load', timeout: 0 }
         );
 
         const itemListing = await page.$$eval(

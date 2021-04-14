@@ -9,11 +9,6 @@ function LandingPage() {
          <Row>
            <Col>
             <h1>Stalk Stock Drops</h1>
-            <img
-              className="d-block w-100"
-              src="https://via.placeholder.com/450x250"
-              alt="Third slide"
-            />
             </Col>
             </Row>
         <Row className="justify-content-md-center">
