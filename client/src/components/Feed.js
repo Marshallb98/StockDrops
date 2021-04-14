@@ -280,7 +280,7 @@ function Feed() {
                 <Accordion.Collapse eventKey="3">
                   <Card.Body className="cardBody">
                     <iframe
-                      src="https://player.twitch.tv/?channel=falcodrin&parent=https://stalkstockdrops.herokuapp.com"
+                      src="https://player.twitch.tv/?channel=falcodrin&parent=www.stalkstockdrops.herokuapp.com"
                       frameborder="0"
                       allowfullscreen="true"
                       scrolling="no"

@@ -7,7 +7,7 @@ function Header() {
       <nav>
   <ul>
     <li>
-      <a id="navStalk" href="/">Stalk Stock Drops</a>
+      <a id="navStalk">Stalk Stock Drops</a>
     </li>
     <li>
       <a id="navDash" href="/dashboard">Dashboard</a>

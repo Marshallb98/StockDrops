@@ -12,8 +12,9 @@ function Login({ history }) {
         email: loginEmail,
         password: loginPassword,
       });
+      alert("Log in Successful!");
       sessionStorage.setItem("token", data.token);
-      history.push("/dashboard");
+      history.push("/dashboard")
     } catch (err) {
       console.log("err loggin in ", err);
     }
@@ -22,6 +23,7 @@ function Login({ history }) {
   return (
     <div className="Login">
       <div className="formContainer">
+      <h2 style={{marginBottom: "30px"}}>login!</h2>
       <Form>
         <Form.Group size="lg" controlId="email">
           <Form.Label>Email</Form.Label>
