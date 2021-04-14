@@ -7,9 +7,9 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const DB = require("./models");
 const cors = require("cors");
-const readBestBuy = require("./api/bestbuy")
+const readBestBuy = require("./api/bestbuy");
 setTimeout(readBestBuy, 10000);
-const path = require('path');
+const path = require("path");
 (async () => {
   try {
     // Connect to the Mongo DB
@@ -44,15 +44,14 @@ const path = require('path');
       console.log(`API Server now listening on PORT ${PORT}!`);
     });
     // Start Newegg Webscraping Function and sends update to Items collection, and then restarts
-    
+
     (async () => {
-      
       const readNewegg = async () => {
-        const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
+        const browser = await puppeteer.launch({ args: ["--no-sandbox"] });
         const page = await browser.newPage();
         await page.goto(
           "https://www.newegg.com/p/pl?N=100007709%20601357282%208000&PageSize=96",
-          { waitUntil: 'load', timeout: 0 }
+          { waitUntil: "load", timeout: 0 }
         );
 
         const itemListing = await page.$$eval(
@@ -99,7 +98,7 @@ const path = require('path');
               modelNumber: itemDetails.modelNumber,
               thumbnail: itemDetails.thumbnail,
             },
-            {upsert: true}
+            { upsert: true }
           ).catch((err) => {
             console.log(err);
           });
@@ -113,6 +112,4 @@ const path = require('path');
   } catch (err) {
     console.log("error connecting to DB", err);
   }
-
-  
 })();
