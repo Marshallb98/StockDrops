@@ -271,8 +271,9 @@ function Feed() {
               <Accordion.Collapse eventKey="3">
                 <Card.Body className="cardBody">
                   <iframe
-                    src="https://player.twitch.tv/?channel=falcodrin&parent=www.stalkstockdrops.herokuapp.com"
+                    src="https://player.twitch.tv/?channel=falcodrin&parent=www.stalkstockdrops.herokuapp.com/dashboard"
                     frameborder="0"
+                    title="Twitch live stream"
                     allowfullscreen="true"
                     scrolling="no"
                     height="378"

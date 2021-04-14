@@ -1,5 +1,4 @@
 import React from "react";
-import { Nav, Navbar } from "react-bootstrap";
 import "../styles/header.css";
 function Header() {
   return (
