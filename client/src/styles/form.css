@@ -1,35 +1,41 @@
-.Login{
+.Login {
     display: flex;
     justify-content: center;
 }
-.formContainer{
+
+.formContainer {
     text-align: center;
     margin-top: 3%;
     display: block;
     min-height: 10em;
     width: 30%;
     padding: 75px;
-    background: rgb(36,59,85);
-    background: linear-gradient(330deg, rgba(36,59,85,1) 15%, rgba(36,59,85,1) 20%, rgba(20,30,48,0.8995973389355743) 30%, rgba(36,59,85,1) 40%, rgba(20,31,48,0.9023984593837535) 50%, rgba(36,59,85,1) 60%, rgba(20,30,48,0.896796218487395) 70%, rgba(36,59,85,1) 80%, rgba(36,59,85,1) 85%);
+    background: rgb(36, 59, 85);
+    background: linear-gradient(330deg, rgba(36, 59, 85, 1) 15%, rgba(36, 59, 85, 1) 20%, rgba(20, 30, 48, 0.8995973389355743) 30%, rgba(36, 59, 85, 1) 40%, rgba(20, 31, 48, 0.9023984593837535) 50%, rgba(36, 59, 85, 1) 60%, rgba(20, 30, 48, 0.896796218487395) 70%, rgba(36, 59, 85, 1) 80%, rgba(36, 59, 85, 1) 85%);
     line-height: 250%;
 }
-.form-label{
+
+.form-label {
     font-weight: bold;
     font-size: large;
 }
-#email{
-    background-color: rgb(255,255,255, .25);
+
+#email {
+    background-color: rgb(255, 255, 255, .25);
     color: black;
     font-weight: 500;
 }
-#password{
-    background-color: rgb(255,255,255, .25);
+
+#password {
+    background-color: rgb(255, 255, 255, .25);
     color: black;
     font-weight: 500;
 }
-#email::placeholder{
-    color: rgb(255, 255, 255);   
+
+#email::placeholder {
+    color: rgb(255, 255, 255);
 }
-#password::placeholder{
-    color: rgb(255, 255, 255);   
+
+#password::placeholder {
+    color: rgb(255, 255, 255);
 }
